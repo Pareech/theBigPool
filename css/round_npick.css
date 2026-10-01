@@ -1,0 +1,79 @@
+* {
+  box-sizing: border-box;
+}
+
+/* Style the body */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+.header h1 {
+  font-size: 2rem;
+}
+
+.grid-container-top {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  text-align: center;
+  background-color: #000000;
+}
+
+.title {
+  grid-area: 1 / 1;
+  padding-top: 1rem;
+  color: #D76E00;
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid #000000;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.draft_status {
+  grid-area: 1 / 2;
+  color: #FFFFFF;
+  padding-top: 1.8rem;
+}
+
+#heading {
+  width: 250px;
+  color: #AFEEEE;
+  text-align: right;
+  padding: 0.2rem;
+  background-color: black;
+}
+
+#draft_info {
+  color: #FFEFD5;
+}
+
+#latest_pick {
+  color: #FA8072;
+}
+
+#draft_info, #latest_pick {
+  padding: 0.2rem;
+  text-align: left;
+  text-indent: 7px;
+  background-color: black;
+}
+
+#latest_pick {
+  width: 550px;
+  text-align: left;
+  text-indent: 7px;
+  color: #FA8072
+}
+
+.info {
+  table-layout: fixed;
+  width: 500px;
+  border: none;
+}
+
+/* Above NavBar End */

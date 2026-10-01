@@ -1,0 +1,148 @@
+/* ================================
+   BODY
+   ================================ */
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ================================
+   HEADER — mirrors gm_status.css
+   ================================ */
+.grid-container-top {
+    width: 100%;
+    grid-template-columns: auto auto !important;
+    justify-content: center !important;
+}
+
+/* ================================
+   DAILY PAGE — loads gm_status.css via
+   outer-scroll / grid-container-bottom /
+   drafted_players / draft_choices, so we
+   only need overrides for the extra columns
+   and the title header colour.
+   ================================ */
+
+/* Today's Skater/Goalie Stats title row only */
+.daily-skater-table tr:first-child th,
+.daily-goalie-table tr:first-child th {
+    background-color: #B0D4F1;
+}
+
+/* Skater table — 7 cols
+   Player(1) | Team(2) | Pos(3) | G(4) | A(5) | Daily Pts(6) | Season Pts(7) */
+.daily-skater-table :is(td, th):nth-child(4) {
+    width: 45px;
+}
+
+/* G */
+.daily-skater-table :is(td, th):nth-child(5) {
+    width: 55px;
+}
+
+/* A */
+.daily-skater-table :is(td, th):nth-child(6) {
+    width: 55px;
+}
+
+/* Daily Pts */
+.daily-skater-table :is(td, th):nth-child(7) {
+    width: 55px;
+}
+
+/* Season Pts */
+
+/* Goalie table — 8 cols
+   Player(1) | Team(2) | Pos(3) | W(4) | SHO(5) | OTL(6) | Daily Pts(7) | Season Pts(8) */
+.daily-goalie-table :is(td, th):nth-child(4) {
+    width: 45px;
+}
+
+/* W */
+.daily-goalie-table :is(td, th):nth-child(5) {
+    width: 55px;
+}
+
+/* SHO */
+.daily-goalie-table :is(td, th):nth-child(6) {
+    width: 45px;
+}
+
+/* OTL */
+.daily-goalie-table :is(td, th):nth-child(7) {
+    width: 55px;
+}
+
+/* Daily Pts */
+.daily-goalie-table :is(td, th):nth-child(8) {
+    width: 55px;
+}
+
+/* Season Pts */
+
+/* ================================
+   MOBILE
+   ================================ */
+@media (max-width: 900px) {
+
+    .grid-container-top {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+    }
+
+    .draft_status {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .info {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    #latest_pick {
+        width: auto !important;
+    }
+
+    /* Collapse the empty side panels so they don't create dead scroll space */
+    .grid-container-bottom {
+        grid-template-columns: 1fr !important;
+        column-gap: 0 !important;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .left_panels,
+    .right_panels {
+        display: none !important;
+    }
+
+    /* Let the outer grid scroll — disable inner table scroll */
+    .table-scroll {
+        overflow-x: visible;
+    }
+
+    /* Let browser size columns naturally on mobile — no fixed layout */
+    .daily-skater-table,
+    .daily-goalie-table {
+        table-layout: auto !important;
+        min-width: unset !important;
+        width: 100% !important;
+    }
+
+    .daily-skater-table :is(td, th),
+    .daily-goalie-table :is(td, th) {
+        width: auto !important;
+        white-space: nowrap;
+    }
+
+    /* Ensure stat columns have breathing room */
+    .daily-skater-table :is(td, th):nth-child(4),
+    .daily-skater-table :is(td, th):nth-child(5),
+    .daily-goalie-table :is(td, th):nth-child(4),
+    .daily-goalie-table :is(td, th):nth-child(5),
+    .daily-goalie-table :is(td, th):nth-child(6) {
+        min-width: 35px;
+    }
+}

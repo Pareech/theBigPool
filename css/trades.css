@@ -1,0 +1,286 @@
+/* Shared Configurations Section */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    padding: 2px;
+    text-align: center;
+    background: #000000;
+    color: #FFFFFF;
+    width: 100%;
+}
+
+th, td {
+    padding: 0.2rem;
+    background: #FFFFFF;
+    border: 2px solid #000000;
+    height: 35px;
+}
+
+th, td.a {
+    background: #EEE8AA;
+}
+
+th {
+    height: 55px;
+}
+
+.buttonSet {
+    font-weight: bold;
+    text-align: center;
+    font-size: 16px;
+    height: 50px;
+    width: 150px;
+}
+
+#textboxid {
+    height: 25px;
+    width: 175px;
+    text-align: center;
+    border-width: 0px;
+    border: none;
+    outline: none;
+}
+
+#checkItem {
+    height: 1rem;
+    width: 1rem;
+}
+
+/* Select GM page trade_players_gm_select.php Section */
+.grid-container-gm_select {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    text-align: center;
+    padding-top: 55px;
+    column-gap: 110px;
+}
+
+.button-row-gm_select {
+    grid-area: 1 / 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-self: start;
+}
+
+.submitButton-gm_select {
+    grid-area: 1 / 1;
+    padding-bottom: 55px;
+}
+
+.resetButton-gm_select {
+    grid-area: 2 / 1;
+}
+
+.gmSelect {
+    grid-area: 1 / 2 / 4 / 5;
+    height: 500px;
+    overflow-y: auto;
+}
+
+.table-gm_select {
+    border: 2px solid #000000;
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: auto;
+    text-align: center;
+    grid-area: 1 / 2 / 4 / 5;
+    height: 500px;
+    overflow-y: auto;
+}
+
+.table-gm_select th:nth-child(1),
+.table-gm_select td:nth-child(1) {
+    width: 150px;
+}
+
+.table-gm_select th:nth-child(2),
+.table-gm_select td:nth-child(2) {
+    width: 160px;
+}
+
+.gm_select_height {
+    height: 35px;
+}
+
+/* For traded player summary trades_completed.php Section */
+.completed_trades {
+    width: 100%;
+    max-width: 750px;
+    height: auto;
+    text-align: justify;
+    border-collapse: collapse;
+    border: 4px solid #000000;
+}
+
+.div-completed_trades {
+    display: flex;
+    justify-content: center;
+    padding-top: 55px;
+    padding-bottom: 55px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.two_sided_border {
+    border: 3px solid #000000;
+    border-style: hidden solid solid hidden;
+    background: #FFFFFF;
+}
+
+#text_alignment_completed_trades {
+    text-align: center;
+    font-size: 30px;
+    border: 3px solid #000000;
+    height: 75px;
+}
+
+.td_trade_number {
+    width: 90px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+
+    /* top and bottom | left and right */
+    border-width: 2px 3px;
+}
+
+/* For trade_criteria.php Section */
+.button-row-trade_criteria {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    padding-top: 35px;
+    padding-bottom: 20px;
+}
+
+.grid-container-trade_criteria {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    text-align: center;
+    column-gap: 65px;
+    padding-bottom: 55px;
+}
+
+.criteria_width {
+    width: 680px;
+    border: 2px solid #000000;
+    border-collapse: collapse;
+
+}
+
+#poolee_row {
+    height: 45px;
+    background: #ADD8E6;
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.div-buttons {
+    padding-bottom: 35px;
+}
+
+.trade-line {
+    margin-left: 0.5em;
+    font-size: 1.1em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.trade-line.first-line {
+    margin-top: 1em;
+    /* small top gap before first line */
+    margin-left: 0.5em;
+}
+
+.trade-line.last-line {
+    margin-bottom: 1em;
+    /* small bottom gap after last line */
+    margin-left: 0.5rem;
+}
+
+.trade-spacer {
+    /* margin: 1em 0; */
+    margin-left: 0.5em;
+}
+
+/* ================================
+   OUTER SCROLL WRAPPER
+   ================================ */
+.outer-scroll {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* ================================
+   MOBILE
+   ================================ */
+@media (max-width: 900px) {
+
+    .div-completed_trades {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .completed_trades {
+        max-width: 100%;
+    }
+
+    .td_trade_number {
+        width: 40px;
+    }
+
+    /* trade_players_gm_select — buttons above table */
+    .grid-container-gm_select {
+        display: flex;
+        flex-direction: column;
+        padding-left: 10px;
+        padding-right: 10px;
+        column-gap: 0;
+    }
+
+    .button-row-gm_select {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        padding-bottom: 10px;
+    }
+
+    .gmSelect {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        height: auto;
+    }
+}
+
+/* ================================
+   MOBILE — trade_criteria
+   ================================ */
+@media (max-width: 900px) {
+
+    .button-row-trade_criteria {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .grid-container-trade_criteria {
+        grid-template-columns: 1fr;
+        column-gap: 0;
+        row-gap: 30px;
+    }
+
+    .criteria_width {
+        width: 100%;
+    }
+}

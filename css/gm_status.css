@@ -1,0 +1,293 @@
+/* ================================
+   BODY
+   ================================ */
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ================================
+   HEADER — override round_npick.css
+   ================================ */
+.grid-container-top {
+  width: 100%;
+  grid-template-columns: auto auto !important;
+  justify-content: center !important;
+}
+
+/* ================================
+   OUTER SCROLL WRAPPER
+   ================================ */
+.outer-scroll {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ================================
+   MAIN GRID LAYOUT
+   ================================ */
+.grid-container-bottom {
+  display: grid;
+  grid-template-columns: 160px 1fr 160px;
+  padding-top: 55px;
+  column-gap: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 55px;
+}
+
+.left_panels {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.drafted_players {
+  grid-column: 2;
+  grid-row: 1 / 6;
+}
+
+.right_panels {
+  grid-column: 3;
+  grid-row: 1;
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ================================
+   SCROLLABLE TABLE WRAPPER
+   ================================ */
+.table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  display: block;
+}
+
+/* Gap between skater and goalie tables */
+.table-scroll+.table-scroll {
+  margin-top: 40px;
+  padding-top: 40px;
+  border-top: 3px solid transparent;
+}
+
+/* ================================
+   BASE TABLE STYLES
+   ================================ */
+table {
+  margin-left: auto;
+  margin-right: auto;
+  border: 3px solid #000000;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+th, td {
+  padding: 0.2rem;
+  border: 3px solid #000000;
+}
+
+/* ================================
+   MAIN PLAYER TABLE
+   ================================ */
+.draft_choices {
+  width: 100%;
+  min-width: 620px;
+  table-layout: fixed;
+  border: 3px solid #000000;
+}
+
+.draft_choices th {
+  height: 50px;
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #EEE8AA;
+}
+
+/* Player name — reduced by ~5 chars */
+.draft_choices td:nth-child(1),
+.draft_choices th:nth-child(1) {
+  width: 140px;
+}
+
+/* Team — max 3 chars */
+.draft_choices td:nth-child(2),
+.draft_choices th:nth-child(2) {
+  width: 55px;
+}
+
+/* Position — max 1 char */
+.draft_choices td:nth-child(3),
+.draft_choices th:nth-child(3) {
+  width: 45px;
+}
+
+/* Salary — max $12,345,678.00 */
+.draft_choices td:nth-child(4),
+.draft_choices th:nth-child(4) {
+  width: 115px;
+}
+
+/* Stat columns 5-7 (skater) or 5-7 (goalie) — max 2 digits */
+.draft_choices :is(td, th):is(:nth-child(5), :nth-child(7)) {
+  width: 45px;
+}
+
+/* SHO column (6) — slightly wider */
+.draft_choices :is(td, th):nth-child(6) {
+  width: 55px;
+}
+
+/* Fantasy Points — last column */
+.draft_choices td:last-child,
+.draft_choices th:last-child {
+  width: 55px;
+}
+
+.draft_choices td {
+  height: 34px;
+}
+
+.draft_choices_columns th {
+  width: 100px;
+}
+
+/* ================================
+   ROW COLOURS
+   ================================ */
+tr.picks:hover td {
+  background-color: #FFA500;
+}
+
+.drops {
+  background-color: #98fb98;
+}
+
+.franchise td {
+  color: forestgreen;
+  font-weight: bold;
+}
+
+.waiver_pickup {
+  background-color: navajowhite;
+}
+
+/* ================================
+   INFO PANEL TABLES
+   ================================ */
+.remainpicks_headings {
+  background-color: #F5F5F5;
+}
+
+.remainpicks_info td {
+  border: none;
+  text-indent: 2px;
+  text-align: left;
+}
+
+.remainpicks_headings, .money, .trades, .waivers {
+  text-align: center;
+  width: 145px;
+  border: 3px solid #000000;
+  color: #000000;
+}
+
+.money, .trades, .waivers {
+  table-layout: fixed;
+  text-indent: 5px;
+}
+
+.money_headings, .trade_headings, .waiver_headings {
+  background-color: #F5F5F5;
+  text-align: center;
+  border-top: 3px solid #000000;
+  border-bottom: 3px solid #000000;
+}
+
+.info_rows {
+  height: 35px;
+}
+
+/* ================================
+   BUTTONS
+   ================================ */
+#buttonSet {
+  font-weight: bold;
+  text-align: center;
+  font-size: 16px;
+  height: 60px;
+  width: 165px;
+}
+
+.button_grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  padding-top: 45px;
+  column-gap: 95px;
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 55px;
+}
+
+.reset_protect {
+  grid-area: 1 / 1;
+}
+
+.reset_franchise {
+  grid-area: 1 / 2;
+}
+
+/* ================================
+   MOBILE — whole grid scrolls left/right
+   ================================ */
+@media (max-width: 900px) {
+
+  .grid-container-top {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+
+  /* Prevent round_npick.php info table from overflowing */
+  .draft_status {
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .info {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  #latest_pick {
+    width: auto !important;
+  }
+
+  .grid-container-bottom {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    max-width: 100vw;
+  }
+
+  .table-scroll {
+    max-width: none;
+  }
+
+  .draft_choices {
+    min-width: 480px;
+  }
+
+  /* Salary column — extra width on mobile to prevent text hugging the border */
+  .draft_choices td:nth-child(4),
+  .draft_choices th:nth-child(4) {
+    width: 145px;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+}

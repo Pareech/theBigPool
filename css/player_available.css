@@ -1,0 +1,341 @@
+/* Style the body */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ================================
+   HEADER — override round_npick.css
+   ================================ */
+.grid-container-top {
+  display: grid !important;
+  grid-template-columns: auto auto !important;
+  justify-content: center !important;
+  text-align: center !important;
+  background-color: #000000 !important;
+  width: 100% !important;
+}
+
+.grid-container-bottom {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  justify-content: center;
+  text-align: center;
+  padding-top: 55px;
+  column-gap: 50px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 55px;
+}
+
+.button-row-draft {
+  grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-self: start;
+}
+
+.buttons {
+  grid-area: 1 / 1;
+  padding-bottom: 55px;
+}
+
+.reset {
+  grid-area: 2 / 1;
+}
+
+.forTable {
+  grid-column: 2;
+  grid-row: 1 / 4;
+  height: 500px;
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
+.bottom_draft, .bottom_search, .bottom_searchCriteria {
+  width: 100%;
+  min-width: 500px;
+  border: 3px solid #000000;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+/* Player column wider, others fixed */
+.bottom_draft th:nth-child(1),
+.bottom_draft td:nth-child(1) {
+  width: 200px;
+}
+
+.bottom_draft th:nth-child(2),
+.bottom_draft td:nth-child(2) {
+  width: 80px;
+}
+
+.bottom_draft th:nth-child(3),
+.bottom_draft td:nth-child(3) {
+  width: 130px;
+}
+
+.bottom_draft th:nth-child(4),
+.bottom_draft td:nth-child(4) {
+  width: 70px;
+}
+
+.bottom_draft th, .bottom_draft td,
+.bottom_search th, .bottom_search td,
+.bottom_searchCriteria th, .bottom_searchCriteria td {
+  overflow: hidden;
+  /* Prevents content from forcing column wider */
+  text-overflow: ellipsis;
+  /* Shows ... when content is cut off */
+  white-space: nowrap;
+  /* Keeps everything on one line */
+}
+
+.bottom_draft th:nth-child(2), .bottom_draft td:nth-child(2),
+.bottom_search th:nth-child(1), .bottom_search td:nth-child(1) {
+  width: 200px;
+}
+
+.bottom_search th:nth-child(2), .bottom_search td:nth-child(2),
+.bottom_search th:nth-child(3), .bottom_search td:nth-child(3),
+.bottom_search th:nth-child(6), .bottom_search td:nth-child(6) {
+  width: 130px;
+}
+
+.bottom_draft th:nth-child(3), .bottom_draft td:nth-child(3),
+.bottom_search th:nth-child(5), .bottom_search td:nth-child(5) {
+  width: 175px;
+}
+
+.bottom_draft th:nth-child(4), .bottom_draft td:nth-child(4) {
+  width: 80px;
+}
+
+.bottom_searchCriteria th:nth-child(4), .bottom_searchCriteria td:nth-child(4) {
+  width: 13px;
+}
+
+
+th {
+  text-align: center;
+  background: #eee;
+  position: sticky;
+  padding: 15px;
+  top: 0px;
+}
+
+td {
+  padding: 10px;
+}
+
+th, td {
+  background: #FFFFFF;
+  border: 3px solid #000000;
+}
+
+th, td.a {
+  background: #EEE8AA;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* Text boxes */
+#textboxid {
+  height: 35px;
+  width: 200px;
+  text-align: center;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+/* Hover highlights row where mouse is */
+tr:hover td.bottom_draft, tr:hover td.bottom_search, tr:hover td.bottom_searchCriteria {
+  background-color: #FFA500;
+}
+
+/* submit button */
+.buttonSet {
+  font-weight: bold;
+  text-align: center;
+  font-size: 16px;
+  height: 50px;
+  width: 150px;
+}
+
+/* For search_criteria_select.php & player_search_db.php Page */
+.div_format {
+  grid-area: 1 / 1;
+  padding-left: 100px;
+  padding-bottom: 55px;
+}
+
+.buttonSubmit {
+  font-weight: bold;
+  text-align: center;
+  font-size: 16px;
+  width: 150px;
+  padding-left: 133px;
+}
+
+.div_textbox {
+  grid-area: 1 / 2 / 4 / 5;
+  height: 500px;
+  max-width: 275px;
+  overflow-y: auto;
+}
+
+.textbox {
+  height: 40px;
+  width: 200px;
+  text-align: center;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+#textbox_minSalary {
+  margin-top: 20px;
+}
+
+#textbox_maxSalary {
+  margin-top: 8px;
+}
+
+/* For search_criteria_select.php & player_search_db.php Page */
+/* ================================
+   MOBILE
+   ================================ */
+@media (max-width: 900px) {
+
+  .grid-container-top {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+
+  .draft_status {
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .info {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  #latest_pick, #draft_info {
+    width: auto !important;
+  }
+
+  .grid-container-bottom {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+    row-gap: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .button-row-draft {
+    flex-direction: row;
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .forTable {
+    grid-column: 1;
+    grid-row: 2;
+    height: 60vh;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: auto;
+  }
+
+  .bottom_draft th:nth-child(4),
+  .bottom_draft td:nth-child(4) {
+    width: 150px;
+  }
+}
+
+/* ================================
+   search_criteria_select.php — dedicated grid
+   ================================ */
+.grid-criteria {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  text-align: center;
+  padding-top: 55px;
+  column-gap: 75px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 55px;
+}
+
+.grid-criteria .div_format {
+  grid-area: 1 / 1;
+  padding-bottom: 55px;
+}
+
+.grid-criteria .buttonSubmit {
+  grid-area: 2 / 1;
+  padding-left: 133px;
+}
+
+.grid-criteria .div_textbox {
+  grid-area: 1 / 2 / 4 / 3;
+  height: 500px;
+  width: 275px;
+  overflow-y: auto;
+}
+
+@media (max-width: 900px) {
+  .grid-criteria {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    row-gap: 0;
+    text-align: center;
+  }
+
+  .grid-criteria .div_format {
+    order: 1;
+    padding-bottom: 0;
+    padding-left: 0;
+    width: 280px;
+    margin-bottom: 20px;
+  }
+
+  .grid-criteria .div_textbox {
+    order: 2;
+    height: auto;
+    width: 280px;
+    overflow: visible;
+    margin-top: 0;
+  }
+
+  .grid-criteria .buttonSubmit {
+    order: 3;
+    padding-left: 0;
+    width: 280px;
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .textbox {
+    width: 280px;
+    max-width: 280px;
+  }
+
+  #textboxid {
+    width: 280px;
+    max-width: 280px;
+    margin-left: 0 !important;
+  }
+}

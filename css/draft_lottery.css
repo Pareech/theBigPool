@@ -1,0 +1,305 @@
+/* ================================
+   BODY
+   ================================ */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ================================
+   HEADER
+   ================================ */
+.header {
+  padding: 2px;
+  text-align: center;
+  background: #000000;
+  color: #FFFFFF;
+  width: 100%;
+}
+
+.header h1 {
+  font-size: 2rem;
+  color: #ffa500;
+}
+
+/* ================================
+   TABLE WRAPPER (draft_lottery_4_review)
+   ================================ */
+.div_table_lottery {
+  padding-top: 55px;
+  padding-bottom: 55px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ================================
+   TABLE
+   ================================ */
+table {
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid #000000;
+  border-collapse: collapse;
+  table-layout: fixed;
+  text-align: center;
+  width: 100%;
+  max-width: 900px;
+  min-width: 400px;
+}
+
+th {
+  height: 55px;
+  font-size: 18px;
+  background-color: #EEE8AA;
+  border: 2px solid #000000;
+  padding: 0.3rem;
+}
+
+td {
+  height: 45px;
+  border: 2px solid #000000;
+  padding: 0.3rem;
+}
+
+#td_change_up {
+  background-color: #90EE90;
+  font-weight: bold;
+}
+
+#td_change_down {
+  background-color: #FFB6C1;
+  font-weight: bold;
+}
+
+.lottory_date {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+#review_div {
+  padding-right: 0;
+}
+
+/* ================================
+   FORM LAYOUT (draft_lottery_1_setDraftOrder)
+   ================================ */
+.grid-container_finish {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: center;
+  gap: 30px 50px;
+  padding: 55px 20px;
+}
+
+.draft-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.colon-space label {
+  font-size: 16px;
+  font-weight: bold;
+  white-space: nowrap;
+  min-width: 120px;
+  display: inline-block;
+}
+
+.dropmenus {
+  height: 35px;
+  font-size: 15px;
+  min-width: 150px;
+}
+
+.submitButton {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.submit {
+  height: 60px;
+  width: 200px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.lastOrderTime,
+.lastDrawTime {
+  font-size: 15px;
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* ================================
+   MOBILE
+   ================================ */
+@media (max-width: 900px) {
+
+  .div_table_lottery {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  table {
+    max-width: 100%;
+  }
+
+  /* Stack 3 columns into 1 */
+  .grid-container_finish {
+    grid-template-columns: 1fr;
+    padding: 30px 15px;
+    gap: 10px;
+  }
+
+  .submitButton {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .dropmenus {
+    min-width: 180px;
+  }
+}
+
+/* ================================
+   SIMULATION PAGE
+   ================================ */
+.sim-wrapper {
+  padding: 40px 20px;
+}
+
+.sim-form {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.sim-form input[type=number] {
+  width: 100px;
+  padding: 6px;
+  font-size: 14px;
+  height: 35px;
+}
+
+.sim-form button {
+  padding: 6px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  height: 35px;
+  cursor: pointer;
+}
+
+.sim-tables {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.sim-title {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.td-left {
+  text-align: left;
+}
+
+/* Cap the odds table width */
+.sim-tables .table-scroll:first-child table {
+  max-width: 350px;
+  width: auto;
+  min-width: unset;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Results table scrolls horizontally */
+.sim-tables .table-scroll:last-child {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.sim-tables .table-scroll:last-child table {
+  min-width: 600px;
+  width: auto;
+  max-width: unset;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* ================================
+   MOBILE
+   ================================ */
+@media (max-width: 900px) {
+
+  .div_table_lottery {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  table {
+    max-width: 100%;
+  }
+
+  .grid-container_finish {
+    grid-template-columns: 1fr;
+    padding: 30px 15px;
+    gap: 10px;
+  }
+
+  .submitButton {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .dropmenus {
+    min-width: 180px;
+  }
+
+  .sim-wrapper {
+    padding: 20px 10px;
+  }
+
+  .sim-form {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .sim-form label,
+  .sim-form input[type=number] {
+    display: inline-block;
+  }
+
+  .sim-form .sim-buttons {
+    display: flex;
+    gap: 10px;
+  }
+
+  .sim-tables {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .sim-tables .table-scroll:first-child table {
+    max-width: 100%;
+  }
+}

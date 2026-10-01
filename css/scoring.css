@@ -1,0 +1,269 @@
+/* Style the body */
+body {
+  background-color: #d3d3d3;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Page header */
+.page-header {
+  width: 100%;
+  background-color: #000000;
+  text-align: center;
+  padding-top: 1rem;
+  color: #D76E00;
+}
+
+.grid-container-bottom {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding-top: 55px;
+  row-gap: 100px;
+  padding-bottom: 55px;
+}
+
+.standings {
+  grid-column: 1 / -1;
+}
+
+.gm_rankings {
+  grid-area: auto;
+}
+
+.forward_leaders {
+  grid-area: auto;
+}
+
+.defence_leaders {
+  grid-area: auto;
+}
+
+.goalie_leaders {
+  grid-area: auto;
+}
+
+/* Daily stats Grid Area */
+.grid-container-dailies {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 45px;
+  column-gap: 40px;
+  row-gap: 100px;
+  padding-bottom: 100px;
+}
+
+.skaters_goals_daily {
+  grid-area: 1 / 1;
+}
+
+.skaters_assists_daily {
+  grid-area: 1 / 2;
+}
+
+.goalies_wins_daily {
+  grid-area: 2 / 1;
+}
+
+.goalies_otl_daily {
+  grid-area: 2 / 2;
+}
+
+.goalies_shutout_daily {
+  grid-area: 3 / 1;
+}
+
+.goalies_assists_daily {
+  grid-area: 3 / 2;
+}
+
+/* Scrollable wrapper for wide tables on small screens */
+.table-scroll {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  display: block;
+}
+
+/* Base Formatting for all Tables */
+table {
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: separate;
+  border-spacing: 0;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  font-family: 'Roboto', sans-serif;
+  color: #000;
+}
+
+tr {
+  height: 70px;
+}
+
+th, td {
+  padding: 0.6rem 1rem;
+  border: 1px solid #ddd;
+  background: linear-gradient(145deg, #f9f9f9, #e8e8e8);
+  box-shadow:
+    inset 1px 1px 2px rgba(255, 255, 255, 0.8),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+th {
+  background: linear-gradient(to bottom, #4ee7f8, #2cb3c4);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #000;
+  box-shadow:
+    inset 1px 1px 1px rgba(255, 255, 255, 0.4),
+    inset -2px -2px 3px rgba(0, 0, 0, 0.15);
+}
+
+.gm_standings {
+  width: 100%;
+  min-width: 700px;
+  max-width: 1550px;
+  table-layout: fixed;
+  border: none;
+}
+
+.daily_goal_standings, .daily_assists_standings {
+  width: 100%;
+  min-width: 400px;
+  max-width: 700px;
+  table-layout: fixed;
+  border: none;
+}
+
+.gm_standings, .daily_goal_standings, .daily_assists_standings th {
+  height: 50px;
+  font-size: 17px;
+  background-color: #F2F2F2;
+}
+
+.gm_standings_columns th {
+  width: 100px;
+}
+
+.table_headers {
+  height: 55px;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #4ee7f8 !important;
+  text-align: left;
+  padding-left: 1rem;
+}
+
+.tr_stats {
+  height: 45px !important;
+}
+
+.pt_totals {
+  color: #228B22;
+  font-weight: bold;
+}
+
+/* =========================
+   Row & Column Hover
+========================= */
+tr.hover-row td {
+  background: linear-gradient(145deg, #a8e2ff, #a8e2ff);
+}
+
+td.hover-col {
+  background: linear-gradient(145deg, #a8e2ff, #a8e2ff);
+}
+
+td.hover-cell {
+  background: linear-gradient(145deg, #a8e2ff, #a8e2ff);
+  box-shadow:
+    inset 1px 1px 2px rgba(255, 255, 255, 0.6),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* =========================
+   Logged-in GM Highlight
+========================= */
+tr.highlight_gm td {
+  background: linear-gradient(145deg, #cff5fc, #cff5fc);
+  color: #d40000 !important;
+  font-weight: bold;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.7);
+  box-shadow:
+    inset 1px 1px 2px rgba(255, 255, 255, 0.5),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.2);
+}
+
+tr:first-child th:first-child {
+  border-top-left-radius: 12px;
+}
+
+tr:first-child th:last-child {
+  border-top-right-radius: 12px;
+}
+
+tr:last-child td:first-child {
+  border-bottom-left-radius: 12px;
+}
+
+tr:last-child td:last-child {
+  border-bottom-right-radius: 12px;
+}
+
+th.asc::after {
+  content: " ▲";
+}
+
+th.desc::after {
+  content: " ▼";
+}
+
+th.asc::after, th.desc::after {
+  font-size: 0.8em;
+  color: #ffa500;
+}
+
+/* ================================
+   MOBILE (below 900px)
+   ================================ */
+@media (max-width: 900px) {
+
+  /* Stack daily tables into single column */
+  .grid-container-dailies {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+  }
+
+  .skaters_goals_daily {
+    grid-area: auto;
+  }
+
+  .skaters_assists_daily {
+    grid-area: auto;
+  }
+
+  .goalies_wins_daily {
+    grid-area: auto;
+  }
+
+  .goalies_otl_daily {
+    grid-area: auto;
+  }
+
+  .goalies_shutout_daily {
+    grid-area: auto;
+  }
+
+  .goalies_assists_daily {
+    grid-area: auto;
+  }
+
+  th, td {
+    padding: 0.4rem 0.5rem;
+    font-size: 14px;
+  }
+}

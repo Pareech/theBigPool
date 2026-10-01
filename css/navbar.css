@@ -1,0 +1,241 @@
+/* ================================
+   DESKTOP NAVBAR (900px and above)
+   ================================ */
+
+/* Hide hamburger and mobile menu on desktop */
+.hamburger {
+  display: none;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #000000;
+  margin-top: 0;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+  float: left;
+  display: block;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 14px 15px;
+}
+
+/* Center-aligned link */
+.navbar a.center {
+  float: center;
+}
+
+.topnav-right {
+  float: right;
+}
+
+/* Dropdown Box Section of NavBar --Start */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: #FFFFFF;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: #FF0000;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.dropdown-content a {
+  float: none;
+  color: #000000;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Remove Underline Links from NavBar */
+a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
+}
+
+/* SUBMENU CONFIGURATION */
+.submenu {
+  position: relative;
+}
+
+.submenu>a::after {
+  content: "▶";
+  float: right;
+  margin-right: 5px;
+}
+
+.submenu-content {
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  background-color: #F9F9F9;
+  min-width: 300px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.submenu-content a {
+  color: #000;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.submenu-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the submenu on hover */
+.submenu:hover .submenu-content {
+  display: block;
+}
+
+.navbar a.log_out {
+  font-size: 17px;
+  color: #FF00FF;
+  font-weight: bold;
+}
+
+.navbar a.rules {
+  font-size: 17px;
+  color: #ff0000;
+  font-weight: bold;
+}
+
+.navbar a.env-label {
+  color: #00f9ff;
+  background-color: #000000;
+  padding: 14px 15px;
+  display: block;
+  text-align: center;
+}
+
+/* ================================
+   MOBILE NAVBAR (below 900px)
+   ================================ */
+
+@media (max-width: 900px) {
+
+  /* Hide the desktop nav items */
+  .navbar a,
+  .navbar .dropdown,
+  .navbar .topnav-right {
+    display: none;
+  }
+
+  /* Ensure navbar stretches full width on mobile */
+  .navbar {
+    width: 100%;
+  }
+
+  /* Show hamburger button */
+  .hamburger {
+    display: block;
+    background-color: #000000;
+    color: #FFFFFF;
+    font-size: 28px;
+    border: none;
+    padding: 14px 16px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+  }
+
+  /* Mobile menu panel — hidden by default */
+  .mobile-menu {
+    display: none;
+    background-color: #111111;
+    width: 100%;
+  }
+
+  .mobile-menu.open {
+    display: block;
+  }
+
+  /* Top level links in mobile menu */
+  .mobile-menu a,
+  .mobile-menu .mobile-dropbtn {
+    display: block;
+    color: #FFFFFF;
+    padding: 12px 20px;
+    text-decoration: none;
+    background-color: #111111;
+    border: none;
+    width: 100%;
+    text-align: left;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+  }
+
+  .mobile-menu a:hover,
+  .mobile-menu .mobile-dropbtn:hover {
+    background-color: #FF0000;
+    color: #FFFFFF;
+  }
+
+  /* Mobile dropdown content — hidden by default */
+  .mobile-dropdown-content {
+    display: none;
+    background-color: #222222;
+    padding-left: 15px;
+  }
+
+  .mobile-dropdown-content.open {
+    display: block;
+  }
+
+  .mobile-dropdown-content a {
+    color: #CCCCCC;
+    padding: 10px 20px;
+    font-size: 15px;
+  }
+
+  .mobile-dropdown-content a:hover {
+    background-color: #FF0000;
+    color: #FFFFFF;
+  }
+
+  /* Dividers inside mobile dropdowns */
+  .mobile-dropdown-content hr {
+    margin: 4px 0;
+    border: 0;
+    border-top: 1px solid #444444;
+  }
+}

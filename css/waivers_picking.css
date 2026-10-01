@@ -1,0 +1,266 @@
+* {
+  box-sizing: border-box;
+}
+
+/* Style the body */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header/logo Title */
+.header {
+  padding: 10px;
+  text-align: center;
+  background: #000000;
+  color: #FFFFFF;
+  width: 100%;
+}
+
+/* Increase the font size of the heading */
+.header h1 {
+  font-size: 2rem;
+  color: #ffa500;
+}
+
+/* ================================
+   BUTTONS
+   ================================ */
+
+/* Top buttons — shown on mobile only */
+.waiver-buttons-top {
+  display: none;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Desktop buttons — shown beside rows on desktop */
+.waiver-buttons-desktop {
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+  align-items: flex-start;
+}
+
+.waiver-btn {
+  height: 60px;
+  width: 180px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Waiver rows container */
+.grid-container_waivers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40px;
+  row-gap: 40px;
+  /* double spacing between rows */
+}
+
+/* Header row */
+.waiver-header {
+  display: grid;
+  grid-template-columns: 280px 200px 350px;
+  /* Ensures enough rows */
+  justify-content: center;
+  text-align: left;
+  padding-top: 55px;
+  padding-right: 150px;
+  column-gap: 90px;
+  /* row-gap: 25px; */
+}
+
+.column-1 {
+  padding-right: 500px;
+}
+
+.column-2 {
+  padding-right: 100px;
+}
+
+.column-3 {
+  padding-right: 50px;
+}
+
+/* Waiver rows + buttons wrapper */
+.waivers-and-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  /* align top of rows and buttons */
+  column-gap: 90px;
+  /* spacing between rows and buttons */
+}
+
+/* Column of waiver rows */
+.waiver-rows {
+  display: flex;
+  flex-direction: column;
+  row-gap: 55px;
+  /* spacing between waiver rows */
+}
+
+/* Individual waiver row */
+.waiver-row {
+  display: grid;
+  grid-template-columns: 300px 180px 300px;
+  /* Choice, Bid, Drop */
+  column-gap: 90px;
+  justify-content: center;
+  align-items: start;
+  /* top-align inputs */
+}
+
+/* Labels inside each row (optional h2) */
+.waiver-row h2 {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+
+/* Buttons column */
+.waiver-buttons {
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+  /* match spacing between waiver rows */
+  align-items: flex-start;
+  /* flush to top of first row */
+}
+
+/* Inputs */
+input[type="text"] {
+  height: 45px;
+  width: 100%;
+  text-align: center;
+  border: 2px solid #000000;
+  font-size: 1rem;
+  padding: 0 5px;
+}
+
+/* Shared datalists */
+datalist option {
+  font-size: 1rem;
+}
+
+/* Optional: tables for results (if used elsewhere) */
+table {
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+th, td {
+  padding: 0.5rem;
+}
+
+/* Highlighting winners */
+.highlight-round1 {
+  background-color: #d4edda;
+}
+
+.highlight-round2 {
+  background-color: #fff3cd;
+}
+
+.highlight-round3 {
+  background-color: #d1ecf1;
+}
+
+.waiver_wins {
+  width: 950px;
+  table-layout: fixed;
+}
+
+.results_table {
+  width: 1150px;
+  table-layout: fixed;
+}
+
+table, th, td, .waiver_wins, .results_table, .alter_waiver_picks {
+  border: 3px solid #000000;
+}
+
+.waiver_wins th, .results_table th, .alter_waiver_picks th {
+  height: 60px;
+  font-size: 20px;
+  background-color: #EEE8AA;
+}
+
+.alter_waiver_picks {
+  width: 800px;
+  table-layout: fixed;
+}
+
+.alter_waiver_picks th {
+  font-size: 19px;
+}
+
+.waiver_wins td, .results_table td, .alter_waiver_picks td {
+  height: 50px;
+}
+
+.alter_waivers_button {
+  grid-column: 1 / 3;
+  grid-row: 1;
+}
+
+.alter_waivers_reset {
+  grid-column: 2 / 5;
+  grid-row: 2;
+  padding-top: 25px;
+}
+
+.update_rosters {
+  padding-left: 100px;
+  padding-top: 100px;
+}
+
+/* Columns for result pages if needed */
+.waiver_pick-column {
+  width: 300px;
+}
+
+.player_drop-column {
+  width: 300px;
+}
+
+/* ================================
+   MOBILE
+   ================================ */
+@media (max-width: 900px) {
+
+  /* Show top buttons, hide desktop buttons */
+  .waiver-buttons-top {
+    display: flex;
+  }
+
+  .waiver-buttons-desktop {
+    display: none;
+  }
+
+  .waiver-header {
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-right: 0;
+    column-gap: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .waiver-row {
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 10px;
+  }
+
+  .grid-container_waivers {
+    padding-top: 20px;
+  }
+}

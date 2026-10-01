@@ -1,0 +1,135 @@
+/* ================================
+   BODY
+   ================================ */
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ================================
+   HEADER — override round_npick.css
+   ================================ */
+.grid-container-top {
+  display: grid !important;
+  grid-template-columns: auto auto !important;
+  justify-content: center !important;
+  text-align: center !important;
+  background-color: #000000 !important;
+  width: 100% !important;
+}
+
+/* ================================
+   TABLE WRAPPER
+   ================================ */
+.div_table_grid {
+  padding-top: 55px;
+  padding-bottom: 55px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ================================
+   BASE TABLE
+   ================================ */
+table {
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid #000000;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+th, td {
+  padding: 0.2rem;
+  border: 2px solid #000000;
+}
+
+tr, th, td {
+  border-left: 3px solid #000000;
+  border-right: 3px solid #000000;
+}
+
+/* ================================
+   BUDGET TABLE
+   ================================ */
+.budget_remaining {
+  width: 100%;
+  min-width: 500px;
+  max-width: 900px;
+  table-layout: fixed;
+  border: 3px solid #000000;
+  background-color: #EAF1F2;
+}
+
+.two_sided_border {
+  background: #FFFFFF;
+  border: 3px solid #000000;
+  border-style: hidden solid solid hidden;
+  border-top: 3px solid #FFFFFF;
+}
+
+.tr_header_budget_reamining {
+  height: 65px;
+  background-color: #EEE8AA;
+  font-size: 20px;
+  border-bottom: 3px solid #000000;
+}
+
+.tr_data_budget_remaining {
+  height: 45px;
+}
+
+tr.budgets:hover td {
+  background-color: #FFA500;
+}
+
+.gm_color {
+  color: #4285F4;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.td_monies {
+  font-size: 18px;
+}
+
+/* ================================
+   MOBILE
+   ================================ */
+@media (max-width: 900px) {
+
+  .grid-container-top {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+
+  .draft_status {
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .info {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  #latest_pick, #draft_info {
+    width: auto !important;
+  }
+
+  .budget_remaining {
+    max-width: 100%;
+  }
+
+  .div_table_grid {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}

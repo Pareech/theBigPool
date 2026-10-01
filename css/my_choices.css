@@ -1,0 +1,338 @@
+/* ================================
+   STICKY TOP (make_draft_notes)
+   ================================ */
+#sticky_top {
+    position: sticky;
+    top: 0;
+    background: #fff;
+    z-index: 200;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #ccc;
+}
+
+/* ================================
+   CONTROLS BAR (make_draft_notes)
+   ================================ */
+.controls-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding-top: 45px;
+    padding-bottom: 30px;
+}
+
+.controls-bar label {
+    margin: 0;
+}
+
+.buttonSet {
+    font-size: 14px;
+    cursor: pointer;
+    align-self: center;
+    padding: 6px 12px;
+    margin: 0;
+    vertical-align: middle;
+}
+
+select#position {
+    font-size: 20px;
+    min-width: 120px;
+    align-self: center;
+    margin: 0;
+    vertical-align: middle;
+}
+
+/* ================================
+   PLAYER TABLE (make_draft_notes) — desktop
+   ================================ */
+#table_container {
+    max-height: 520px;
+    overflow-y: auto;
+    margin-top: 6px;
+}
+
+#player_table {
+    width: auto;
+    max-width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+/* Match bottom_draft column widths */
+#player_table th:nth-child(1),
+#player_table td:nth-child(1) {
+    width: 200px;
+}
+
+/* Player */
+
+#player_table th:nth-child(2),
+#player_table td:nth-child(2) {
+    width: 70px;
+}
+
+/* Team */
+
+#player_table th:nth-child(3),
+#player_table td:nth-child(3) {
+    width: 120px;
+}
+
+/* Salary */
+
+#player_table th:nth-child(4),
+#player_table td:nth-child(4) {
+    width: auto;
+}
+
+/* Notes input */
+
+#player_table th:nth-child(5),
+#player_table td:nth-child(5) {
+    width: 90px;
+}
+
+/* Protected */
+
+#player_table th:nth-child(6),
+#player_table td:nth-child(6) {
+    width: 60px;
+}
+
+/* Select */
+
+input.notes-input {
+    width: 98%;
+    height: 30px;
+    box-sizing: border-box;
+}
+
+input[type="checkbox"] {
+    transform: scale(0.9);
+    margin: 0 auto;
+    display: block;
+}
+
+/* ================================
+   NOTES WRAPPER (my_draft_notes)
+   ================================ */
+.notes-wrapper {
+    padding: 20px 20px 55px 20px;
+}
+
+/* ================================
+   DROPDOWN CONTROL (my_draft_notes)
+   ================================ */
+.controls-draft {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 35px;
+}
+
+.controls-draft select {
+    width: 200px;
+    padding: 4px 8px;
+    font-size: 25px;
+}
+
+/* ================================
+   TABLE SCROLL WRAPPER
+   ================================ */
+.table-scroll {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* ================================
+   SECTION HEADINGS
+   ================================ */
+.table-scroll h2 {
+    margin: 10px 0 6px 0;
+    font-size: 24px;
+    text-align: left;
+}
+
+/* ================================
+   TABLE STYLES
+   ================================ */
+table.bottom_draft {
+    width: auto;
+    max-width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+table.bottom_draft th {
+    text-align: center;
+    background: #EEE8AA;
+    padding: 12px 8px;
+    border: 3px solid #000000;
+    cursor: pointer;
+    font-size: 16px;
+    position: sticky;
+    top: 0;
+    white-space: nowrap;
+}
+
+table.bottom_draft th:hover {
+    background: #d4c870;
+}
+
+table.bottom_draft td {
+    padding: 8px;
+    background: #FFFFFF;
+    border: 3px solid #000000;
+    text-align: center;
+}
+
+.td-left {
+    text-align: left !important;
+}
+
+/* Column widths */
+.bottom_draft th:nth-child(1),
+.bottom_draft td:nth-child(1) {
+    width: 200px;
+}
+
+/* Player — variable */
+
+.bottom_draft th:nth-child(2),
+.bottom_draft td:nth-child(2) {
+    width: 70px;
+}
+
+/* Team — max 3 chars */
+
+.bottom_draft th:nth-child(3),
+.bottom_draft td:nth-child(3) {
+    width: 60px;
+}
+
+/* Pos — max 1 char */
+
+.bottom_draft th:nth-child(4),
+.bottom_draft td:nth-child(4) {
+    width: 120px;
+}
+
+/* Salary — max $12,345,678 */
+
+.bottom_draft th:nth-child(5),
+.bottom_draft td:nth-child(5) {
+    width: auto;
+}
+
+/* Notes — takes remaining space */
+
+.bottom_draft th:nth-child(6),
+.bottom_draft td:nth-child(6) {
+    width: 90px;
+}
+
+/* Drafted — max 10 chars */
+
+tr:hover td {
+    background-color: #FFA500;
+}
+
+/* ================================
+   MOBILE
+   ================================ */
+@media (max-width: 900px) {
+
+    .grid-container-top {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+    }
+
+    .draft_status {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .info {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    #latest_pick, #draft_info {
+        width: auto !important;
+    }
+
+    .notes-wrapper {
+        padding: 15px 10px 30px 10px;
+    }
+
+    .controls-bar {
+        flex-wrap: wrap;
+    }
+
+    .bottom_draft th:nth-child(1),
+    .bottom_draft td:nth-child(1) {
+        width: 250px;
+    }
+
+    .bottom_draft th:nth-child(5),
+    .bottom_draft td:nth-child(5) {
+        width: 500px;
+    }
+
+    table.bottom_draft {
+        table-layout: auto;
+        max-width: unset;
+        width: max-content;
+    }
+
+    /* make_draft_notes player table on mobile */
+    #player_table {
+        table-layout: auto;
+        width: max-content;
+        max-width: unset;
+        margin-left: 0;
+    }
+
+    #player_table th:nth-child(1),
+    #player_table td:nth-child(1) {
+        width: 200px;
+    }
+
+    #player_table th:nth-child(2),
+    #player_table td:nth-child(2) {
+        width: 60px;
+    }
+
+    #player_table th:nth-child(3),
+    #player_table td:nth-child(3) {
+        width: 110px;
+    }
+
+    #player_table th:nth-child(4),
+    #player_table td:nth-child(4) {
+        width: 250px;
+    }
+
+    #player_table th:nth-child(5),
+    #player_table td:nth-child(5) {
+        width: 100px;
+    }
+
+    #player_table th:nth-child(6),
+    #player_table td:nth-child(6) {
+        width: 60px;
+    }
+
+    #table_container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        max-height: none;
+    }
+}

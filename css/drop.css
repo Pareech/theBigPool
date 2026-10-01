@@ -1,0 +1,175 @@
+/* ================================
+   BODY
+   ================================ */
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ================================
+   HEADER
+   ================================ */
+.grid-container-top {
+  display: grid !important;
+  grid-template-columns: auto auto !important;
+  justify-content: center !important;
+  text-align: center !important;
+  background-color: #000000 !important;
+  color: #FFFFFF;
+  width: 100%;
+}
+
+.item_top {
+  grid-area: 1 / 1;
+  padding-top: 1rem;
+}
+
+.protection_title {
+  grid-area: 1 / 1;
+  padding-top: 1rem;
+  padding-right: 2rem;
+}
+
+.protection_criteria {
+  grid-area: 1 / 2;
+  padding-top: .75rem;
+  padding-left: 2rem;
+  max-width: 600px;
+}
+
+/* ================================
+   OUTER SCROLL WRAPPER
+   ================================ */
+.outer-scroll {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ================================
+   MAIN GRID LAYOUT
+   ================================ */
+.grid-container {
+  display: grid;
+  grid-template-columns: 160px auto;
+  padding-top: 55px;
+  column-gap: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 55px;
+  justify-content: center;
+  min-width: 500px;
+}
+
+.button-row {
+  grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-self: start;
+}
+
+.playerList {
+  grid-column: 2;
+  grid-row: 1 / 4;
+}
+
+/* ================================
+   TABLE STYLES
+   ================================ */
+table {
+  border: 2px solid #000000;
+  border-collapse: collapse;
+  width: 600px;
+}
+
+tr:hover td {
+  background-color: #FFA500;
+}
+
+th {
+  background-color: #EEE8AA;
+  border: 2px solid #000000;
+  text-align: center;
+  position: sticky;
+  padding: 15px;
+  top: 0px;
+}
+
+td {
+  padding: 5px;
+  border: 2px solid #000000;
+}
+
+/* Column 1 — left aligned with padding */
+table td:nth-child(1) {
+  text-align: left;
+  padding-left: 10px;
+}
+
+/* Columns 2, 3, 4, 5 — centered */
+table td:nth-child(2),
+table td:nth-child(3),
+table td:nth-child(4),
+table td:nth-child(5) {
+  text-align: center;
+}
+
+/* ================================
+   BUTTONS
+   ================================ */
+#buttonSet {
+  font-weight: bold;
+  text-align: center;
+  font-size: 16px;
+  height: 50px;
+  width: 150px;
+}
+
+/* ================================
+   MOBILE — buttons side by side above table
+   ================================ */
+@media (max-width: 900px) {
+
+  .grid-container-top {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    align-items: center;
+  }
+
+  .protection_title,
+  .protection_criteria {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-align: center;
+  }
+
+  .outer-scroll {
+    width: 100%;
+  }
+
+  .grid-container {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    padding-right: 10px;
+    min-width: unset;
+  }
+
+  /* Buttons side by side on mobile */
+  .button-row {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding-bottom: 20px;
+  }
+
+  /* Table scrolls left/right */
+  .playerList {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}

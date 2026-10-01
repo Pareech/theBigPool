@@ -1,0 +1,90 @@
+* {
+  box-sizing: border-box;
+}
+
+/* Style the body */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  /* zoom: 80%; */
+}
+
+.header h1 {
+  font-size: 2rem;
+}
+
+.grid-container-top {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  text-align: center;
+  background-color: #000000;
+}
+
+.title {
+  grid-area: 1 / 1;
+  padding-top: 1.625rem;
+  color: #D76E00;
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid #000000;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.draft_status {
+  grid-area: 1 / 2;
+  color: #FFFFFF;
+  padding-top: 1.8rem;
+  padding-bottom: 1rem;
+}
+
+#points {
+  color: #FFEFD5;
+  padding-left: 2.8rem;
+  text-align: left;
+}
+
+#titles {
+  width: 210px;
+  color: #AFEEEE;
+  text-align: left;
+  background-color: black;
+}
+
+.info {
+  table-layout: fixed;
+  width: 18.5rem;
+  border: none;
+}
+
+/* Above NavBar End */
+
+/* ================================
+   MOBILE — tighten points info table
+   ================================ */
+@media (max-width: 900px) {
+
+  .info {
+    width: auto !important;
+    table-layout: auto !important;
+  }
+
+  #titles {
+    width: auto !important;
+    white-space: nowrap;
+  }
+
+  #points {
+    padding-left: 0.8rem;
+    white-space: nowrap;
+  }
+
+  .draft_status {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+}

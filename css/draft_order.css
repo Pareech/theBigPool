@@ -1,0 +1,138 @@
+/* ================================
+   BODY
+   ================================ */
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ================================
+   HEADER — override round_npick.css
+   ================================ */
+.grid-container-top {
+  display: grid !important;
+  grid-template-columns: auto auto !important;
+  justify-content: center !important;
+  text-align: center !important;
+  background-color: #000000 !important;
+  width: 100% !important;
+}
+
+/* ================================
+   OUTER SCROLL WRAPPER
+   ================================ */
+.outer-scroll {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
+}
+
+/* ================================
+   TABLE
+   ================================ */
+table {
+  margin-left: auto;
+  margin-right: auto;
+  border: 3px solid #000000;
+  border-collapse: collapse;
+  text-align: center;
+  table-layout: fixed;
+  width: max-content;
+}
+
+#picks {
+  margin-top: 20px;
+}
+
+.round, #tr_picks {
+  height: 55px;
+}
+
+th, td {
+  padding: 0.2rem;
+  width: 155px;
+  border: 3px solid #000000;
+}
+
+th, td.a {
+  line-height: 50px;
+}
+
+/* Keep round headers on one line */
+tr.round th {
+  white-space: nowrap;
+}
+
+#odd_columns {
+  background-color: #ADD8E6;
+}
+
+#even_columns {
+  background-color: #F5F5DC;
+}
+
+#pick_numb {
+  background-color: #EEE8AA;
+  font-weight: bold;
+  text-align: center;
+  width: 80px;
+  white-space: nowrap;
+}
+
+.two_sided_border {
+  border-style: hidden solid solid hidden;
+  background: #FFFFFF;
+  width: 80px;
+}
+
+/* ================================
+   LAST DB UPDATE
+   ================================ */
+.div_lastUpdate {
+  margin-top: 10px;
+  margin-left: 5px;
+  font-size: 14px;
+}
+
+/* ================================
+   VIEW COMPLETED TRADES
+   ================================ */
+.div-1 {
+  display: flex;
+  font-size: 35px;
+  text-decoration: underline;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+/* ================================
+   MOBILE
+   ================================ */
+@media (max-width: 900px) {
+
+  .grid-container-top {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+
+  .draft_status {
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .info {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  #latest_pick, #draft_info {
+    width: auto !important;
+  }
+
+  .outer-scroll {
+    padding: 10px;
+  }
+}
