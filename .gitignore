@@ -2,7 +2,6 @@
 db_heroku_connections/connection_pdo.php
 _file_imports/
 test_folder/
-current_season_dev.code-workspace
 .vscode/settings.json
 _find_player/player_search.php
 misc_files/rules.php
@@ -21,3 +20,5 @@ player_scoring/goalie_points_hockey-reference.php
 player_scoring/skater_points_hockey-reference.php
 misc_files/auth_check_new.php
 .vscode/extensions.json
+tbeBigPool_dev.code-workspace
+db_connections/db_reset_connections.php
